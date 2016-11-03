@@ -1,0 +1,414 @@
+/*LAYOUT*/
+*,
+*:before,
+*:after {
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+body{
+   background-color: white;
+   color: black;
+   font-family: "Roboto", sans-serif;
+   font-weight: 300;
+}
+
+h1{
+  display: block;
+  color: #FCB720;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  text-align: center;
+}
+
+h4{
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  color: white;
+  text-shadow: 2px 2px 10px black;
+  position: relative;
+  bottom: 46px;
+  left: 0;
+  right: 0;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 1px;
+  font-weight: 100;
+}
+
+a{
+   color: black;
+   text-decoration: none;
+}
+
+p{
+  text-align: center;
+  position: absolute;
+  top: 90vh;
+  left: 0;
+  right: 0;
+  width: 100%;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+p:before {
+  background-color: white;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: .3;
+  display: block;
+  padding: 20px;
+  margin: -10px;
+}
+
+/*GALLERY*/
+.gallery{
+   position: fixed;
+   height: 90vh;
+   width: 100vw;
+   border: 1px solid #FFFFFF;
+}
+
+.gallery img{
+   display: block;
+   margin: 0 auto;
+   width: auto;
+   height: 100%;
+   max-width: 80%;
+   overflow: hidden;
+   padding: 10px;
+}
+
+.arrow{
+   position: absolute;
+   top: 50%;
+   display: block;
+   width: 60px;
+   height: 60px;
+   border: none;
+   opacity: 0.7;
+   cursor: auto;
+   z-index:20;
+}
+
+.gallery button{
+  background: none;
+}
+
+.arrow:hover,
+.arrow:focus{
+   opacity: 1;
+}
+
+.arrow:before,
+.arrow:after{
+   content: '';
+   position: absolute;
+   width: 2px;
+   height: 40%;
+   background-color: none;
+}
+
+button:focus{
+  outline: none;
+}
+
+.arrow:before{
+   bottom: 6px;
+}
+
+.arrow:after{
+   top: 12px;
+}
+
+.arrow:hover:before,
+.arrow:focus:before,
+.arrow:hover:after,
+.arrow:focus:after{
+   background-color: none;
+}
+
+.left{
+   left: 0.5em;
+}
+
+.left:before{
+   transform: rotate(-40deg);
+   left: 35%;
+}
+
+.left:after{
+   transform: rotate(40deg);
+   left: 35%;
+}
+
+.right{
+   right: 0.5em;
+}
+
+.right:before{
+   transform: rotate(40deg);
+   right: 35%;
+}
+
+.right:after{
+   transform: rotate(-40deg);
+   right: 35%;
+}
+
+/*HELPER*/
+.invisible{
+   border: 0;
+   clip: rect(0 0 0 0);
+   height: 1px;
+   margin: -1px;
+   overflow: hidden;
+   padding: 0;
+   position: absolute;
+   width: 1px;
+}
+
+/*HOMEPAGE*/
+.form-search{
+   margin: 0.5em 0;
+   text-align: center;
+}
+
+.form-search #query{
+   padding: 5px;
+   margin-right: 2px;
+   font-weight: 100;
+
+}
+
+.form-search input{
+  color: #000000;
+  border: none;
+  border-bottom: solid 1px silver;
+  padding: 5px;
+}
+
+input:focus{
+  outline: none;
+}
+
+/*THUMBNAIL*/
+.thumbnails__list,
+.pager{
+   margin: 0;
+   padding: 0;
+   list-style-type: none;
+}
+
+.thumbnails__list li{
+   display: inline-block;
+   width: 33.33%;
+   /*margin-top: 1%;
+   margin-right: 1%;*/
+}
+
+.pager{
+   text-align: center;
+   margin: 0.5em 0;
+}
+
+.pager li{
+   display: inline-flex;
+}
+
+.pager a{
+   margin: 0 0.2em;
+   color: black;
+   text-decoration: none;
+}
+
+.pager a.current,
+.pager a:hover,
+.pager a:focus{
+   color: #FCB720;
+   text-decoration: none;
+ }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+img {
+  width: 299px;
+  height: 299px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.thumbnail,
+.grp {
+  zoom: 1;
+}
+.thumbnails:before, .thumbnails:after,
+.grp:before,
+.grp:after {
+  content: "";
+  display: table;
+}
+.thumbnails:after,
+.grp:after {
+  clear: both;
+}
+
+.image-replace {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.thumbnails {
+  max-width: 60em;
+  margin: 0 auto;
+}
+
+.thumbnails:hover a {
+  opacity: 0.5 !important;
+}
+
+.thumbnails:hover a:hover {
+  opacity: 1 !important;
+}
+
+.thumbnails img {
+  object-fit: cover;
+  vertical-align: middle;
+  backface-visibility: hidden;
+}
+
+.thumbnails a {
+  float: left;
+  transition: all 500ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+#myLightBox {
+   position: fixed;
+   left: 0;
+   top: 0;
+   right:0;
+   text-align:center;
+   z-index: 1000;
+   display: none;
+   width:100%;
+   height: 100vh;
+}
+
+#myLightBox:before {
+  background-color: white;
+  content: '';
+  position: absolute;
+  width: 100vw;
+  min-height: 100vh;
+  opacity: .8;
+  display: block;
+  -webkit-animation: fadein .5s; /* Safari, Chrome and Opera > 12.1 */
+   -moz-animation: fadein .5s; /* Firefox < 16 */
+    -ms-animation: fadein .5s; /* Internet Explorer */
+     -o-animation: fadein .5s; /* Opera < 12.1 */
+        animation: fadein .5s;
+  -webkit-filter: blur(4px);
+overflow: hidden;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .8; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .8; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .8; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .8; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .8; }
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .8; }
+}
+
+/* The Circle pop up */
+.mainBtn {
+  display: block;
+  width: 48px;
+  height: 48px;
+  z-index: 20;
+  background-color: #ffffff;
+  transition: transform .3s ease;
+  border-radius: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  margin: 10px;
+  z-index: 9;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.mainBtn:before, .mainBtn:after {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 30px;
+  background-color: #5fcac6;
+  position: absolute;
+  left: 23px;
+  top: 9px;
+}
+
+.mainBtn:after {
+  width: 30px;
+  height: 2px;
+  left: 9px;
+  top: 23px;
+}
+
+/*hint*/
+#hint{
+  position: fixed;
+  top: 10px;
+  right: 62px;
+  font-size: 8px;
+  text-align:right;
+  font-weight: 100;
+  z-index: 20;
+}
+
+#hint h1{
+  text-align:right;
+  color: #5fcac6;
+}

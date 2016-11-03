@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Lightbox by Virginia Van Keuren</title>
+      <link rel="stylesheet" type="text/css" href="styles.css">
+      <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+   </head>
+
+ <body>
+  <header>
+     <h1>Flickr Lightbox</h1>
+     <form class="js-form-search form-search" action="/search" method="get" role="search">
+        <label for="query">Search:</label>
+        <input type="search" name="query" id="query" placeholder="Ex: sunrise" required/>
+        <input type="submit" value="Search"/>
+     </form>
+        <ol class="pager"></ol>
+  </header>
+<!-- hidden lightbox -->
+<div id="myLightBox" style="display: none">
+  <div class="island">
+     <div class="js-galleria gallery">
+        <img src="" class="js-galleria__image" title=""/>
+             <div id="gocubs"></div>
+        <button class="js-galleria__left arrow left">
+           <span class="invisible">Previous photo</span>
+        </button>
+        <button class="js-galleria__right arrow right">
+           <span class="invisible">Next photo</span>
+        </button>
+     </div>
+  </div>
+</div>
+<!-- the thumbnails gallery -->
+  <div class="thumbnails" id="thumbnails">
+     <ul class="js-thumbnails__list thumbnails__list"></ul>
+  </div>
+  <script type="text/javascript" src="index.js"></script>
+<!-- the pop -->
+  <div onmouseover="showHint()" onmouseout="hideHint()" class="mainBtn" style="display: block;" id="navToggle">
+  </div>
+<!-- hint -->
+  <div id="hint" style="display: none;">
+    <h1>Press left and right arrow<br> inside lightbox mode <br>to switch between images</h1>
+  </div>
+</body>
